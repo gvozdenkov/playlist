@@ -5,6 +5,10 @@
   gap: 10px;
 }
 
+.header__icon-button {
+  margin-left: auto;
+}
+
 @media (max-width: 540px) {
   .header {
     gap: 7px;

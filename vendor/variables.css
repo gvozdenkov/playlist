@@ -1,19 +1,21 @@
 :root {
   --yellow: 255, 219, 77;
   --gutter: 30px;
-  --section-space: 60px;
+  --section-space: 80px;
 }
 
 .theme-dark {
-  --color-backgroun-primary: black;
+  --color-background-primary: rgb(30, 30, 30);
   --color-content-primary: white;
-  --color-content-seccondary: rgb(211, 211, 211);
   --color-content-primary-filter: invert(95%) sepia(1%) saturate(641%)
     hue-rotate(240deg) brightness(115%) contrast(100%);
+  --color-content-seccondary: rgb(130, 130, 130);
+  --color-accent-primary: rgb(255, 219, 77);
+  --color-accent-secondary: rgb(140, 140, 140);
 }
 
 .theme-light {
-  --color-backgroun-primary: white;
+  --color-background-primary: white;
   --color-content-primary: black;
   --color-content-primary-filter: invert(0%) sepia(2%) saturate(28%)
     hue-rotate(7deg) brightness(94%) contrast(100%);
