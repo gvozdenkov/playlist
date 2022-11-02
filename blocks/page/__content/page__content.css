@@ -1,0 +1,5 @@
+.page__content {
+  max-width: 700px;
+  width: calc(100% - var(--gutter) * 2);
+  margin: 0 auto;
+}

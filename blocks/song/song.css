@@ -1,0 +1,68 @@
+.song {
+  display: flex;
+  align-items: center;
+  justify-content: fstart;
+  padding: 20px 15px;
+  box-sizing: border-box;
+  border: 1px solid var(--color-content-seccondary);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.song__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.song__author {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 30px 0 10px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.song__like-btn {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  margin-left: auto;
+  fill: var(--color-content-primary);
+  transition: all 0.2s ease-out;
+}
+
+.song__like-btn:hover,
+.song__like-btn:focus {
+  fill: var(--color-accent-secondary);
+  outline: none;
+}
+
+.song__like-btn:active {
+  scale: 1.2;
+}
+
+.song__like-btn_active {
+  background: url(../../images/like_btn_active.svg) no-repeat;
+  filter: var(--color-content-primary-filter);
+}
+
+.song__like-btn:hover.song__like-btn_active,
+.song__like-btn:focus.song__like-btn_active {
+  filter: var(--color-accent-secondary-filter);
+}
+
+.song__like {
+  fill: inherit;
+  width: 22px;
+  height: 19px;
+}

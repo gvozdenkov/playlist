@@ -1,0 +1,14 @@
+.songs-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.songs-list__reset-button {
+  margin-left: auto;
+}

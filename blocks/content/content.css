@@ -1,0 +1,6 @@
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+  padding-top: 20px;
+}

@@ -1,0 +1,14 @@
+.playlist {
+  display: flex;
+  flex-flow: column;
+}
+
+.playlist__no-songs {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-content-seccondary);
+  margin: 0;
+  text-align: center;
+  padding: 50px 0;
+}

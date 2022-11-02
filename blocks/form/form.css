@@ -1,0 +1,16 @@
+.form {
+  width: 100%;
+}
+
+.form__input {
+  border: 0;
+  border-bottom: 1px solid var(--color-content-seccondary);
+  padding: 15px 0;
+  transition: border-bottom 0.5s ease-out;
+}
+
+.form__input:active,
+.form__input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--color-content-primary);
+}
