@@ -10,7 +10,13 @@
   transition: all 0.2s ease-out;
 }
 
-.icon-button_icon {
+.icon-button__icon {
   width: 30px;
   height: 30px;
+}
+
+@media (max-width: 414px) {
+  .icon-button .icon-button__text {
+    display: none;
+  }
 }

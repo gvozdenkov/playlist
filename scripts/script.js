@@ -17,14 +17,15 @@ function setTheme(themeName) {
 
 // function to toggle between light and dark theme
 const toggleTheme = () => {
+  const buttonText = themeButton.querySelector(".icon-button__text");
+  const buttonIcon = themeButton.querySelector(".icon-button__icon");
+
   if (doc.className === "theme-light") {
     setTheme("theme-dark");
-    themeButton.querySelector(".icon-button_icon").src =
-      "../images/dark_mode_active.svg";
+    buttonIcon.src = "../images/light_mode.svg";
   } else {
     setTheme("theme-light");
-    themeButton.querySelector(".icon-button_icon").src =
-      "../images/dark_mode.svg";
+    buttonIcon.src = "../images/dark_mode.svg";
   }
 };
 
