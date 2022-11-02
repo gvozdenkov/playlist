@@ -24,7 +24,6 @@
   white-space: nowrap;
   min-width: 0;
   width: 100%;
-  text-align: center;
 }
 
 @media (max-width: 540px) {
@@ -33,6 +32,7 @@
     gap: 20px;
   }
   .cover__title {
+    text-align: center;
     font-size: 32px;
   }
 }

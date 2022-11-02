@@ -56,7 +56,7 @@
               required
             />
             <button
-              class="button add-song-form__button form__submit"
+              class="button add-song-form__button form__submit_action_add"
               type="submit"
             >
               Add song
@@ -67,7 +67,7 @@
           <h2 class="section-title">Playlist</h2>
           <p class="playlist__no-songs">No added songs :(</p>
           <ul class="songs-list">
-            <li class="song">
+            <!-- <li class="song">
               <p class="song__title">
                 Song title Lorem ipsum dolor sit amet consectetur adipisicing
                 elit. Ex quos est harum facere velit. Atque, modi laudantium.
@@ -109,13 +109,17 @@
                   />
                 </svg>
               </button>
-            </li>
+            </li> -->
           </ul>
-          <button class="button songs-list__reset-button" type="button">
+          <button
+            class="button songs-list__reset-button form__submit_action_reset"
+            type="button"
+          >
             Clear playlist
           </button>
         </section>
       </main>
     </div>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

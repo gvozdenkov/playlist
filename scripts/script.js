@@ -1,3 +1,8 @@
+const content = document.querySelector(".content");
+const songsList = content.querySelector(".songs-list");
+let songs = songsList.querySelectorAll(".song");
+const addButton = content.querySelector(".form__submit_action_add");
+const resetButton = content.querySelector(".form__submit_action_reset");
 const themeButton = document.querySelector(".theme-btn");
 
 // ====================== Theme change
@@ -25,3 +30,7 @@ const toggleTheme = () => {
 
 themeButton.addEventListener("click", toggleTheme);
 
+// =============
+if (songs.length === 0) {
+  resetButton.setAttribute("disabled", true);
+}

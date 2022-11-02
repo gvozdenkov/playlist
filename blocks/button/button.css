@@ -22,3 +22,7 @@
 .button:active {
   scale: 0.97;
 }
+
+.button:disabled {
+  background-color: var(--color-content-seccondary);
+}
