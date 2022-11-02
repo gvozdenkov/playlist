@@ -1,4 +1,11 @@
 .page {
   font-family: "Inter", Arial, sans-serif;
   color: var(--color-content-primary);
+  padding-top: 40px;
+}
+
+@media (max-width: 540px) {
+  .page {
+    padding-top: 20px;
+  }
 }

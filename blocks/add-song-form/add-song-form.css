@@ -13,3 +13,13 @@
   flex: 1 1 0;
   min-width: 0;
 }
+
+@media (max-width: 540px) {
+  .add-song-form {
+    flex-flow: column;
+  }
+
+  .add-song-form__button {
+    min-width: 100%;
+  }
+}

@@ -1,6 +1,7 @@
 :root {
   --yellow: 255, 219, 77;
   --gutter: 30px;
+  --section-space: 60px;
 }
 
 .theme-dark {
@@ -21,4 +22,17 @@
   --color-accent-secondary: rgb(140, 140, 140);
   --color-accent-secondary-filter: invert(55%) sepia(0%) saturate(241%)
     hue-rotate(167deg) brightness(100%) contrast(90%);
+}
+
+@media (max-width: 540px) {
+  :root {
+    --gutter: 20px;
+    --section-space: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --gutter: 10px;
+  }
 }
