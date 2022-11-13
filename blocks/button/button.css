@@ -23,6 +23,7 @@
   scale: 0.97;
 }
 
-.button:disabled {
+.button_disabled {
   background-color: var(--color-content-seccondary);
+  pointer-events: none;
 }

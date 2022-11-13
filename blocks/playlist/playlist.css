@@ -12,3 +12,7 @@
   text-align: center;
   padding: 50px 0;
 }
+
+.playlist__no-songs_hidden {
+  display: none;
+}

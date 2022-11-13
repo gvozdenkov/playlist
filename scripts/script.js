@@ -1,9 +1,10 @@
 const content = document.querySelector(".content");
-const songsList = content.querySelector(".songs-list");
-let songs = songsList.querySelectorAll(".song");
+const themeButton = document.querySelector(".theme-btn");
+const songsContainer = content.querySelector(".songs-list");
 const addButton = content.querySelector(".form__submit_action_add");
 const resetButton = content.querySelector(".form__submit_action_reset");
-const themeButton = document.querySelector(".theme-btn");
+const addSongForm = content.querySelector(".add-song-form");
+const noSongElement = content.querySelector(".playlist__no-songs");
 
 // ====================== Theme change
 doc = document.documentElement;
@@ -17,7 +18,6 @@ function setTheme(themeName) {
 
 // function to toggle between light and dark theme
 const toggleTheme = () => {
-  const buttonText = themeButton.querySelector(".icon-button__text");
   const buttonIcon = themeButton.querySelector(".icon-button__icon");
 
   if (doc.className === "theme-light") {
@@ -31,7 +31,66 @@ const toggleTheme = () => {
 
 themeButton.addEventListener("click", toggleTheme);
 
-// =============
-if (songs.length === 0) {
-  resetButton.setAttribute("disabled", true);
+// ============= Add songs
+function renderHasSongs() {
+  resetButton.removeAttribute("disabled", true);
+  resetButton.classList.remove("button_disabled");
+  noSongElement.classList.add("playlist__no-songs_hidden");
 }
+
+function renderNoSongs() {
+  resetButton.setAttribute("disabled", true);
+  resetButton.classList.add("button_disabled");
+  noSongElement.classList.remove("playlist__no-songs_hidden");
+}
+
+function getFormInputsValues(form) {
+  const formData = new FormData(form);
+  const formProps = Object.fromEntries(formData);
+  return formProps;
+}
+
+function clearFormInputsValues(form) {
+  [...form.elements].forEach((input) => {
+    input.nodeName === "INPUT" ? (input.value = "") : null;
+  });
+}
+
+const generateSong = (song) => {
+  const songTemplate = document.querySelector("#song-template").content;
+  const songElement = songTemplate.querySelector(".song").cloneNode(true);
+  const songLikeButtonElement = songElement.querySelector(".song__like-btn");
+
+  songElement.querySelector(".song__title").textContent = song.title;
+  songElement.querySelector(".song__author").textContent = song.author;
+
+  songLikeButtonElement.addEventListener("click", (evt) => {
+    evt.target.classList.toggle("song__like-btn_active");
+  });
+
+  return songElement;
+};
+
+function renderSong(song, container) {
+  container.append(generateSong(song));
+}
+
+function handleAddSong(evt) {
+  evt.preventDefault();
+
+  const song = getFormInputsValues(addSongForm);
+
+  renderSong(song, songsContainer);
+  clearFormInputsValues(addSongForm);
+  renderHasSongs();
+}
+
+addSongForm.addEventListener("submit", handleAddSong);
+
+resetButton.addEventListener("click", () => {
+  const songs = document.querySelectorAll(".song");
+  songs.forEach((song) => song.remove());
+  renderNoSongs();
+});
+
+renderNoSongs();

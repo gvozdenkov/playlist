@@ -65,51 +65,7 @@
         <section class="playlist">
           <h2 class="section-title">Playlist</h2>
           <p class="playlist__no-songs">No added songs :(</p>
-          <ul class="songs-list">
-            <!-- <li class="song">
-              <p class="song__title">
-                Song title Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Ex quos est harum facere velit. Atque, modi laudantium.
-                Molestiae modi voluptatem iure error nesciunt distinctio rerum
-                fugiat quisquam eveniet. Eius, esse!
-              </p>
-              <p class="song__author">
-                Song author Lorem ipsum dolor sit, amet consectetur adipisicing
-                elit. Repudiandae aliquid quae explicabo perferendis veniam
-                officia similique eos soluta, modi officiis dolores impedit ab,
-                nostrum minus commodi tempora velit. Consequatur, tenetur.
-              </p>
-              <button class="song__like-btn" type="button">
-                <svg
-                  viewBox="0 0 22 19"
-                  class="song__like"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.3 9.786c2.267-2.243 2.267-5.884 0-8.104-2.269-2.243-5.951-2.243-8.22 0l-1.1 1.11-1.1-1.088C7.612-.56 3.93-.56 1.684 1.682A5.657 5.657 0 0 0 0 5.745a5.75 5.75 0 0 0 1.684 4.063L10.98 19l9.32-9.214ZM1.436 5.745c0-1.155.45-2.22 1.28-3.02A4.33 4.33 0 0 1 5.771 1.46c1.1 0 2.2.422 3.054 1.265l2.155 2.11 2.156-2.132c1.684-1.665 4.446-1.665 6.108 0 .808.8 1.28 1.865 1.28 3.02 0 1.154-.45 2.22-1.28 3.02l-8.264 8.192-8.263-8.17c-.808-.822-1.28-1.888-1.28-3.02Z"
-                  />
-                </svg>
-              </button>
-            </li>
-            <li class="song">
-              <p class="song__title">Song title</p>
-              <p class="song__author">Song author</p>
-              <button
-                class="song__like-btn song__like-btn_active"
-                type="button"
-              >
-                <svg
-                  viewBox="0 0 22 19"
-                  class="song__like"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.3 9.786c2.267-2.243 2.267-5.884 0-8.104-2.269-2.243-5.951-2.243-8.22 0l-1.1 1.11-1.1-1.088C7.612-.56 3.93-.56 1.684 1.682A5.657 5.657 0 0 0 0 5.745a5.75 5.75 0 0 0 1.684 4.063L10.98 19l9.32-9.214ZM1.436 5.745c0-1.155.45-2.22 1.28-3.02A4.33 4.33 0 0 1 5.771 1.46c1.1 0 2.2.422 3.054 1.265l2.155 2.11 2.156-2.132c1.684-1.665 4.446-1.665 6.108 0 .808.8 1.28 1.865 1.28 3.02 0 1.154-.45 2.22-1.28 3.02l-8.264 8.192-8.263-8.17c-.808-.822-1.28-1.888-1.28-3.02Z"
-                  />
-                </svg>
-              </button>
-            </li> -->
-          </ul>
+          <ul class="songs-list"></ul>
           <button
             class="button songs-list__reset-button form__submit_action_reset"
             type="button"
@@ -119,6 +75,23 @@
         </section>
       </main>
     </div>
+    <template id="song-template">
+      <li class="song">
+        <h3 class="song__title">${song.title}</h3>
+        <p class="song__author">${song.author}</p>
+        <button class="song__like-btn" type="button">
+          <svg
+            viewBox="0 0 22 19"
+            class="song__like"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.3 9.786c2.267-2.243 2.267-5.884 0-8.104-2.269-2.243-5.951-2.243-8.22 0l-1.1 1.11-1.1-1.088C7.612-.56 3.93-.56 1.684 1.682A5.657 5.657 0 0 0 0 5.745a5.75 5.75 0 0 0 1.684 4.063L10.98 19l9.32-9.214ZM1.436 5.745c0-1.155.45-2.22 1.28-3.02A4.33 4.33 0 0 1 5.771 1.46c1.1 0 2.2.422 3.054 1.265l2.155 2.11 2.156-2.132c1.684-1.665 4.446-1.665 6.108 0 .808.8 1.28 1.865 1.28 3.02 0 1.154-.45 2.22-1.28 3.02l-8.264 8.192-8.263-8.17c-.808-.822-1.28-1.888-1.28-3.02Z"
+            />
+          </svg>
+        </button>
+      </li>
+    </template>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
