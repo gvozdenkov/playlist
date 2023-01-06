@@ -22,8 +22,6 @@
   --color-content-seccondary: rgb(211, 211, 211);
   --color-accent-primary: rgb(255, 219, 77);
   --color-accent-secondary: rgb(140, 140, 140);
-  --color-accent-secondary-filter: invert(55%) sepia(0%) saturate(241%)
-    hue-rotate(167deg) brightness(100%) contrast(90%);
 }
 
 @media (max-width: 540px) {

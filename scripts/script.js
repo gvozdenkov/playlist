@@ -3,8 +3,10 @@ const themeButton = document.querySelector(".theme-btn");
 const songsContainer = content.querySelector(".songs-list");
 const addButton = content.querySelector(".form__submit_action_add");
 const resetButton = content.querySelector(".form__submit_action_reset");
-const addSongForm = content.querySelector(".add-song-form");
 const noSongElement = content.querySelector(".playlist__no-songs");
+const addSongForm = document.forms.addSongForm;
+const artist = addSongForm.elements.author;
+const title = addSongForm.elements.title;
 
 // ====================== Theme change
 doc = document.documentElement;
@@ -64,10 +66,6 @@ const generateSong = (song) => {
   songElement.querySelector(".song__title").textContent = song.title;
   songElement.querySelector(".song__author").textContent = song.author;
 
-  songLikeButtonElement.addEventListener("click", (evt) => {
-    evt.target.classList.toggle("song__like-btn_active");
-  });
-
   return songElement;
 };
 
@@ -83,14 +81,36 @@ function handleAddSong(evt) {
   renderSong(song, songsContainer);
   clearFormInputsValues(addSongForm);
   renderHasSongs();
+  setSubmitButtonState(false);
+}
+
+function setSubmitButtonState(isFormValid) {
+  if (isFormValid) {
+    addButton.removeAttribute("disabled");
+    addButton.classList.remove("button_disabled");
+  } else {
+    addButton.setAttribute("disabled", true);
+    addButton.classList.add("button_disabled");
+  }
 }
 
 addSongForm.addEventListener("submit", handleAddSong);
+addSongForm.addEventListener("input", (evt) => {
+  const isValid =
+    artist.value.length > 0 && title.value.length > 0 ? true : false;
+  setSubmitButtonState(isValid);
+});
 
 resetButton.addEventListener("click", () => {
   const songs = document.querySelectorAll(".song");
   songs.forEach((song) => song.remove());
   renderNoSongs();
+});
+
+songsContainer.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("song__like-btn")) {
+    evt.target.classList.toggle("song__like-btn_active");
+  }
 });
 
 renderNoSongs();

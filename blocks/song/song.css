@@ -30,18 +30,23 @@
 }
 
 .song__like-btn {
-  background-color: transparent;
+  background-color: var(--color-content-primary);
+  mask-image: url(../../images/like_btn.svg);
+  -webkit-mask-image: url(../../images/like_btn.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  width: 22px;
+  height: 19px;
   border: 0;
   padding: 0;
   cursor: pointer;
   margin-left: auto;
-  fill: var(--color-content-primary);
   transition: all 0.2s ease-out;
 }
 
 .song__like-btn:hover,
 .song__like-btn:focus {
-  fill: var(--color-accent-secondary);
+  background-color: var(--color-accent-secondary);
   outline: none;
 }
 
@@ -50,19 +55,13 @@
 }
 
 .song__like-btn_active {
-  background: url(../../images/like_btn_active.svg) no-repeat;
-  filter: var(--color-content-primary-filter);
+  mask-image: url(../../images/like_btn_active.svg);
+  -webkit-mask-image: url(../../images/like_btn_active.svg);
 }
 
 .song__like-btn:hover.song__like-btn_active,
 .song__like-btn:focus.song__like-btn_active {
-  filter: var(--color-accent-secondary-filter);
-}
-
-.song__like {
-  fill: inherit;
-  width: 22px;
-  height: 19px;
+  background-color: var(--color-accent-secondary);
 }
 
 @media (max-width: 540px) {
