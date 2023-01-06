@@ -52,12 +52,6 @@ function getFormInputsValues(form) {
   return formProps;
 }
 
-function clearFormInputsValues(form) {
-  [...form.elements].forEach((input) => {
-    input.nodeName === "INPUT" ? (input.value = "") : null;
-  });
-}
-
 const generateSong = (song) => {
   const songTemplate = document.querySelector("#song-template").content;
   const songElement = songTemplate.querySelector(".song").cloneNode(true);
@@ -79,9 +73,9 @@ function handleAddSong(evt) {
   const song = getFormInputsValues(addSongForm);
 
   renderSong(song, songsContainer);
-  clearFormInputsValues(addSongForm);
   renderHasSongs();
   setSubmitButtonState(false);
+  addSongForm.reset();
 }
 
 function setSubmitButtonState(isFormValid) {
